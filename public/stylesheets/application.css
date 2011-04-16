@@ -157,7 +157,7 @@ a:hover {
     width: 195px;
 }
 
-#action button {
+#action .Button {
     height: 38px;
     width: 80px;
     font-size: 14px;

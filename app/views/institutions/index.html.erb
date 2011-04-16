@@ -11,7 +11,7 @@
                 <%= "#{institution.category.name}" unless institution.category.nil? %>
                 &raquo;
                 <%= "#{institution.category.name}" unless institution.category.nil? %>
-                <span class="meta"><%= "#{institution.rating} voturi" %></span>
+                <span class="meta"><%= pluralize(institution.rate_count, 'vot', 'voturi') %></span>
               </li>
           <% end %>
         </ul>
