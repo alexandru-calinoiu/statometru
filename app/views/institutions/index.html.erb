@@ -1,18 +1,11 @@
-<% if @institutions %>
-    <% if @institutions.blank? %>
-        <div>Cautarea nu a returnat nimic</div>
-    <% else %>
-        <ul id="search">
-          <% @institutions.each do |institution| %>
-              <li>
-                <%= link_to institution.name, "/institutie/#{institution.id}", :class => "institution" %>
-                <%= " #{institution.location.name}" unless institution.location.nil? %>
-                <span class="meta"><%= pluralize(institution.rate_count, 'vot', 'voturi') %></span>
-              </li>
-          <% end %>
-        </ul>
-        <%= will_paginate @institutions %>
+<div id="metrics">
+  <ul>
+    <% @categories.each do |category| %>
+        <li>
+          <span class="icon"></span>
+          <a href="#" class="label"><%= category.name %></a>
+          <span class="statometru"><% category.rate %></span>
+        </li>
     <% end %>
-<% else %>
-    <div>Trebuie sa introduci cel putin un cuvant</div>
-<% end %>
+  </ul>
+</div>

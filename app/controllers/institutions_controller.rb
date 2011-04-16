@@ -3,7 +3,7 @@ class InstitutionsController < ApplicationController
   before_filter :authenticate_user!, :only => [:rate]
 
   def index
-    @institutions = Institution.paginate(:page => params[:page], :per_page => 16)
+    @categories = Category.find_all_by_category_id(0)
 
     respond_to do |format|
       format.html
@@ -53,8 +53,8 @@ class InstitutionsController < ApplicationController
     @institutions = Institution.includes(:location).search(@query, :page => params[:page], :per_page => 10, :match_mode => :extended)
 
     respond_to do |format|
-      format.js { render :action => 'index', :layout => false }
-      format.html { render :action => 'index' }
+      format.js { render :layout => false }
+      format.html { render }
     end
   end
 end

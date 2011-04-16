@@ -11,7 +11,7 @@
 #
 
 class Category < ActiveRecord::Base
-  attr_accessible :name
+  attr_accessible :name, :rate
 
   belongs_to :category, :foreign_key => :category_id
   has_many :categories, :foreign_key => :category_id
