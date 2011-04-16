@@ -1,10 +1,14 @@
 Statometru::Application.routes.draw do
   root :to => "institutions#index"
 
-  devise_for :users
+  resources :users
+  resources :user_sessions
+
+  match 'login' => "user_sessions#new"
+  match 'logout' => "user_sessions#destroy"
 
   match "/search" => "institutions#index"
   match "/find" => "institutions#find"
   match 'institutie/:id' => 'institutions#details'
-  match 'institutie/:id/noteaza/:nota' => 'institutions#rate'
+  match 'institutie/:id/noteaza' => 'institutions#rate'
 end

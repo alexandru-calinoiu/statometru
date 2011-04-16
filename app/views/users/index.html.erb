@@ -1,0 +1,32 @@
+<% @title = 'Users' %>
+<h2>Listing users</h2>
+<% if @users.empty? %>
+	<p>No users found! Login to be the first.</p>
+<% else %>
+<table>
+    <tr>
+        <th>
+            Identifier
+        </th>
+        <th>
+            Username
+        </th>
+        <th>
+            Email
+        </th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+        <td>
+            <%=h user.identifier %>
+        </td>
+        <td>
+            <%= link_to h(user.username), user %>
+        </td>
+        <td>
+            <%=h user.email %>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<% end %>

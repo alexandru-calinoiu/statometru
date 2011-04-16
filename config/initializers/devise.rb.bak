@@ -173,7 +173,7 @@ Devise.setup do |config|
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', :scope => 'user,public_repo'
   config.rpx_application_name = "statometru"
-  RPXNow.api_key = "2bdf0c6d931231134ebce941137e5c6a399c1760"
+  RPXNow.api_key = "a67a7212cb2e8d3512347e3cfba6d3bb78fe04a3"
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

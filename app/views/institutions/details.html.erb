@@ -13,6 +13,17 @@
   <%= @institution.address %>
 </p>
 
-<% 10.times do |i| %>
-  <%= link_to "Nota #{i+1}", "/institutie/#{@institution.id}/noteaza/#{i+1}", :style => "#{'font-weight:bold;' if ((!@current_rate.blank?) and (@current_rate.value == i+1))}" %>
-<% end %>
+<form action="/institutie/<%= @institution.id %>/noteaza" method="get">
+  <input type="text" value=<%= cookies["institutie#{@institution.id}"] || 5 %> name="nota" onchange="$.cookie('institutie'+'<%= @institution.id %>', nota.value);">
+
+
+  <% unless current_user %>
+    <%=raw RPXNow.popup_code 'Noteaza', 'statometruro', user_sessions_url %>
+  <% else %>
+    <input type="submit" value="Noteaza">
+  <% end %>
+
+  <!-- input type="submit" value="noteaza" class="rpxnow" -->
+</form>
+
+<%# link_to "Nota #{i+1}", "/institutie/#{@institution.id}/noteaza/#{i+1}", :style => "#{'font-weight:bold;' if ((!@current_rate.blank?) and (@current_rate.value == i+1))}" %>

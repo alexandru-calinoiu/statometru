@@ -1,10 +1,11 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.0.6'
-gem 'devise', '1.2.1'
-gem 'devise_rpx_connectable'
+#gem 'devise', '1.2.1'
+#gem 'devise_rpx_connectable'
 gem 'will_paginate', '3.0.pre2'
 gem "jquery-rails"
+gem "rpx_now"
 
 
 # Bundle edge Rails instead:
