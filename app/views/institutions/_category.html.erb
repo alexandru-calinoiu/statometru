@@ -1,5 +1,4 @@
 <li>
-  <span class="icon"></span>
-  <%= link_to category.name, root_url + "categorie/#{category.id}", :class => "label" %>
+  <%= link_to raw('<span class="icon"></span>') + truncate(category.name, :length => 35), root_url + "categorie/#{category.id}", :class => "label" %>
   <span class="statometru"><% category.rate %></span>
 </li>
