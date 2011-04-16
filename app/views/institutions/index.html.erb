@@ -1,0 +1,11 @@
+<div id="metrics">
+  <ul>
+    <% @categories.each do |category| %>
+        <li>
+          <span class="icon"></span>
+          <a href="#" class="label"><%= category.name %></a>
+          <span class="statometru"><% category.rate %></span>
+        </li>
+    <% end %>
+  </ul>
+</div>

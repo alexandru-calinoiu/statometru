@@ -15,10 +15,10 @@
 #
 
 class Institution < ActiveRecord::Base
-  attr_accessible :name, :address, :rating, :rate_count
+  attr_accessible :name, :address, :rating, :rate_count, :location, :category
 
-  has_one :category
-  has_one :location
+  belongs_to :category
+  belongs_to :location
 
   def application()
     #code here

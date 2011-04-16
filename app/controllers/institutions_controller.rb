@@ -1,7 +1,12 @@
 class InstitutionsController < ApplicationController
 
-  #before_filter :require_user, :only => [:rate]
+  def index
+    @categories = Category.find_all_by_category_id(0)
 
+    respond_to do |format|
+      format.html
+    end
+  end
 
   def details
     @institution = Institution.find(params[:id]) rescue nil
@@ -38,5 +43,23 @@ class InstitutionsController < ApplicationController
     redirect_to "/institutie/#{institution.id}"
   end
 
+  def find
+    if !params[:institution].blank?
+      @search_institution = params[:institution].split
+      @query = "@name *#{@search_institution.join("* *")}*"
+    end
+
+    if !params[:location].blank?
+      @search_location = params[:location].split
+      @query = "#{@query} @location_name *#{@search_location.join("* *")}*"
+    end
+
+    @institutions = Institution.includes(:location).search(@query, :page => params[:page], :per_page => 10, :match_mode => :extended)
+
+    respond_to do |format|
+      format.js { render :layout => false }
+      format.html { render }
+    end
+  end
 
 end
