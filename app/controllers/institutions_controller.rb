@@ -53,7 +53,7 @@ class InstitutionsController < ApplicationController
     @institutions = Institution.search(@query, :page => params[:page], :per_page => 10, :match_mode => :extended)
 
     respond_to do |format|
-      format.html { render :action => 'index' }
+      format.html { render :action => 'index', :layout => false }
     end
   end
 end

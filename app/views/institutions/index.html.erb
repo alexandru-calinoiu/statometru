@@ -6,9 +6,11 @@
           <% @institutions.each do |institution| %>
               <li>
                 <%= link_to institution.name, "/institutie/#{institution.id}", :class => "institution" %>
+<!--
                 <%= " #{institution.location.name}" unless institution.location.nil? %>
                 <%= ' &raquo; '.html_safe + "#{institution.category.category.name}" unless (institution.category.nil? || institution.category.category.nil?) %>
                 <%= ' &raquo; '.html_safe + "#{institution.category.name}" unless institution.category.nil? %>
+-->
                 <span class="meta"><%= pluralize(institution.rate_count, 'vot', 'voturi') %></span>
               </li>
           <% end %>
