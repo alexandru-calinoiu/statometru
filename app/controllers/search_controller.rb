@@ -9,10 +9,9 @@ class SearchController < ApplicationController
   end
 
   def find
-    @search_terms = params[:search_term].split
-    @institutions = Institution.search("*#{@search_terms.join("* *")}*", :page => params[:page], :per_page => 10)
-      @search_term = params[:search_term].split
-      @query = "@name #{@search_term.join("* *")}"
+    if !params[:search_term].blank?
+      @search_terms = params[:search_term].split
+      @query = "@name #{@search_terms.join("* *")}"
     end
 
     if !params[:search_location].blank?
@@ -21,6 +20,7 @@ class SearchController < ApplicationController
     end
 
     @institutions = Institution.search(@query, :page => params[:page], :per_page => 10, :match_mode => :extended)
+
     respond_to do |format|
       format.html { render :action => 'index' }
     end
