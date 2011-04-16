@@ -32,6 +32,8 @@ class InstitutionsController < ApplicationController
       current_rate.save!
     end
 
+    flash[:notice] = "Instituţia a fost notată!"
+
     redirect_to "/institutie/#{institution.id}"
   end
 

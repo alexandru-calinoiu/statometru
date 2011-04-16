@@ -1,46 +1,46 @@
 <form action="/institutie/<%= @institution.id %>/noteaza" method="get">
   <fieldset>
-      <div id="avatar">
-          <img src="/images/ratings/rating5.png" alt="" />
-      </div>
-      <div id="message">&nbsp;</div>
-      <div id="slider">
-        <input type="range" name="nota" id="rating" min="1" max="10" value="<%= cookies["institutie#{@institution.id}"] || 5 %>" step="1" />
-      </div>
+    <div id="avatar">
+      <img src="/images/ratings/rating5.png" alt=""/>
+    </div>
+    <div id="message">&nbsp;</div>
+    <div id="slider">
+      <input type="range" name="nota" id="rating" min="1" max="10" value="<%= cookies["institutie#{@institution.id}"] || 5 %>" step="1"/>
+    </div>
 
-<!--  <input type="text" value=<%= cookies["institutie#{@institution.id}"] || 5 %> name="nota" onchange="$.cookie('institutie'+'<%= @institution.id %>', nota.value);"> -->
-
-    <% unless current_user %>
-      <%=raw RPXNow.popup_code 'Noteaza', 'statometruro', user_sessions_url, :html => {:class => "Button"} %>
-    <% else %>
-      <input type="submit" id="rate" value="Da nota!" class="Button">
-    <% end %>
+    <div id="noteaza">
+      <% unless current_user %>
+          <%= raw RPXNow.popup_code 'Dă nota!', 'statometruro', user_sessions_url, :html => {:class => "Button"} %>
+      <% else %>
+          <input type="submit" id="rate" value="Dă nota!" class="Button">
+      <% end %>
+    </div>
   </fieldset>
 </form>
 
 <div id="profile">
-    <div id="address">Adresa: <%= @institution.address %></div>
-    <div id="statometru">Statometrul curent: <%= @institution.rating %></div>
-    <div id="ratings"><%= @institution.rate_count %> note</div>
+  <div id="address">Adresa: <%= @institution.address %></div>
+  <div id="statometru">Statometrul curent: <%= @institution.rating %></div>
+  <div id="ratings"><%= @institution.rate_count %> note</div>
 </div>
 
 <script type="text/javascript">
 
-var rating = <%= cookies["institutie#{@institution.id}"] || 5 %>;
+    var rating = <%= cookies["institutie#{@institution.id}"] || 5 %>;
 
-var text = new Array();
-text[0] = 'Mesaj 1';
-text[1] = 'Mesaj 2';
-text[2] = 'Mesaj 3';
-text[3] = 'Mesaj 4';
-text[4] = 'Mesaj 5';
-text[5] = 'Mesaj 6';
-text[6] = 'Mesaj 7';
-text[7] = 'Mesaj 8';
-text[8] = 'Mesaj 9';
-text[9] = 'Mesaj 10';
+    var text = new Array();
+    text[0] = 'Supărat foc';
+    text[1] = 'Imi vine să plâng de nervi, supărat până la lacrimi';
+    text[2] = 'Speriat de birocrație, nu îmi vine să cred, doar în România';
+    text[3] = 'Mi se face rău';
+    text[4] = 'Consternat, nu pot să cred, poftim?';
+    text[5] = 'Plăcut surprins, uite că se poate';
+    text[6] = 'Satisfăcut';
+    text[7] = 'N-a fost coadă, yupii!, functionari profesionisti';
+    text[8] = 'Total mulțumit';
+    text[9] = 'Am rămas mască, sunt extaziat, nu îmi vine să cred';
 
-function rate(index, first) {
+    function rate(index, first) {
 
 //	var api = $('#rating').data('range');
 
@@ -48,38 +48,42 @@ function rate(index, first) {
 //		api.setValue(index);
 //	}
 
-	$('#avatar').find('img').attr('src', '/images/ratings/rating'+index+'.png');
-	$('#message').text(text[index-1]);
-}
+        $('#avatar').find('img').attr('src', '/images/ratings/rating' + index + '.png');
+        $('#message').text(text[index - 1]);
+    }
 
-function preload(arrayOfImages) {
-    $(arrayOfImages).each(function(){
-        $('<img/>')[0].src = this;
+    function preload(arrayOfImages) {
+        $(arrayOfImages).each(function() {
+            $('<img/>')[0].src = this;
+        });
+    }
+
+    preload([
+        '/images/ratings/rating1.png',
+        '/images/ratings/rating2.png',
+        '/images/ratings/rating3.png',
+        '/images/ratings/rating4.png',
+        '/images/ratings/rating5.png',
+        '/images/ratings/rating6.png',
+        '/images/ratings/rating7.png',
+        '/images/ratings/rating8.png',
+        '/images/ratings/rating9.png',
+        '/images/ratings/rating10.png'
+    ]);
+
+    $(document).ready(function() {
+        $("#rating").rangeinput({
+            onSlide: function(event, value) {
+                rate(value);
+                $.cookie('institutie' + '<%= @institution.id %>', $('#rating').val());
+            },
+            change: function(event, value) {
+                rate(value);
+                $.cookie('institutie' + '<%= @institution.id %>', $('#rating').val());
+            }
+        });
+
+        rate(6, true);
+
     });
-}
-
-preload([
-    '/images/ratings/rating1.png',
-    '/images/ratings/rating2.png',
-    '/images/ratings/rating3.png',
-    '/images/ratings/rating4.png',
-    '/images/ratings/rating5.png',
-    '/images/ratings/rating6.png',
-    '/images/ratings/rating7.png',
-    '/images/ratings/rating8.png',
-    '/images/ratings/rating9.png',
-    '/images/ratings/rating10.png'
-]);
-
-$(document).ready(function() {
-	$("#rating").rangeinput({
-		change: function(event, value) {
-			rate(value);
-            $.cookie('institutie'+'<%= @institution.id %>', $('#rating').val());
-		}
-	});
-
-	rate(6, true);
-
-});
 </script>

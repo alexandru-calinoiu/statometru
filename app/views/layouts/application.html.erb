@@ -19,17 +19,18 @@
       statometru.ro
     </a>
 
-    <% step1, step2 = "", "" %>
+    <% step1, step2, step3 = "", "", "" %>
     <% step1 = "current" unless (action_name == "details" or action_name == "rate") %>
     <% step2 = "current" if step1.blank? %>
-
+    <% step3 = "current" unless step3.blank? %>
 
     <div id="main">
 
       <div id="action">
         <ul id="steps">
-          <li id="step1" class="<%= step1 %>"><span>1</span> Alege institutia pe care vrei sa o ratezi</li>
-          <li id="step2" class="<%= step2 %>"><span>2</span>Rateaza institutia</li>
+          <li id="step1" class="<%= step1 %>"><span>1</span>Alege instituţia</li>
+          <li id="step2" class="<%= step2 %>"><span>2</span>Dă-i o notă</li>
+          <li id="step3" class="<%= step3 %>"><span>3</span>Ia atitudine!</li>
         </ul>
 
         <% if step1%>
@@ -39,7 +40,7 @@
                 <%= text_field_tag :institution, "Institutia (ex. Spitalul Municipal)" %>
                 <%= text_field_tag :location, "Locatie (ex. Sibiu)" %>
               </div>
-              <%= submit_tag 'Cauta', :class => "Button" %>
+              <%= submit_tag 'Caută', :class => "Button" %>
             </fieldset>
           <% end %>
         <% end %>
