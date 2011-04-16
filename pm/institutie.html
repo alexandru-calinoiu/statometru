@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>statometru.ro</title>
+	<link rel="stylesheet" type="text/css" href="assets/styles/styles.css" /> 
+
+	<script src="assets/scripts/jquery.js" type="text/javascript"></script>
+	<script src="assets/scripts/rangeinput.js" type="text/javascript"></script>
+
+</head>
+<body>
+	<div id="wrapper">
+		<a id="logo" href="#">
+			Logo
+		</a>
+		<div id="main">
+
+			<div id="action">
+				<ul id="steps">
+					<li id="step1" class="current"><span>1</span> Alege institutia</li>
+					<li id="step2"><span>2</span> Da-i o nota</li>
+					<li id="step3"><span>3</span> Ia atitudine!</li>
+				</ul>
+				<div id="title">Spitalul Judetean Piatra Neamt</div>
+				<form action="">
+					<fieldset>
+						<div id="avatar">
+							<img src="assets/images/ratings/rating5.png" alt="" />
+						</div>
+						<div id="message">&nbsp;</div>
+						<div id="slider">
+							<input type="range" name="rating" id="rating" min="1" max="10" value="6" step="1" />
+						</div>
+
+						<input type="submit" id="rate" value="Da nota!" />
+					</fieldset>
+				</form>
+
+				<div id="profile">
+					<div id="address">Adresa: Returns the progress element. The one that "follows" the handle.</div>
+					<div id="statometru">Statometrul curent: 5,6</div>
+					<div id="ratings">345 note</div>
+				</div>
+
+			</div>
+
+		</div>
+		<div id="footer">
+			<p>
+				<a href="#">Blog</a> | 
+				<a href="#">Despre StatoMetru</a> | 
+				<a href="#">Contact</a>
+			</p>
+			<p>
+				&copy; 2011 statometru.ro
+			</p>
+		</div>
+	</div>
+
+<script type="text/javascript">
+
+var rating = 4;
+
+var text = new Array();
+text[0] = 'Mesaj 1';
+text[1] = 'Mesaj 2';
+text[2] = 'Mesaj 3';
+text[3] = 'Mesaj 4';
+text[4] = 'Mesaj 5';
+text[5] = 'Mesaj 6';
+text[6] = 'Mesaj 7';
+text[7] = 'Mesaj 8';
+text[8] = 'Mesaj 9';
+text[9] = 'Mesaj 10';
+
+function rate(index, first) {
+
+//	var api = $('#rating').data('range');
+
+//	if(first) {
+//		api.setValue(index);
+//	}
+
+	$('#avatar').find('img').attr('src', 'assets/images/ratings/rating'+index+'.png');
+	$('#message').text(text[index-1]);
+}
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+
+preload([
+    'assets/images/ratings/rating1.png',
+    'assets/images/ratings/rating2.png',
+    'assets/images/ratings/rating3.png',
+    'assets/images/ratings/rating4.png',
+    'assets/images/ratings/rating5.png',
+    'assets/images/ratings/rating6.png',
+    'assets/images/ratings/rating7.png',
+    'assets/images/ratings/rating8.png',
+    'assets/images/ratings/rating9.png',
+    'assets/images/ratings/rating10.png'
+]);
+
+$(document).ready(function() {
+	$("#rating").rangeinput({
+		onSlide: function(event, value) {
+			rate(value);
+		},
+		change: function(event, value) {
+			rate(value);
+		}
+	});
+
+	rate(6, true);
+
+});
+</script>
+</body>
+</html>
