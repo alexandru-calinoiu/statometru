@@ -1,26 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b1bf803a-3a00-43d2-af93-8afe73dbe3ab" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb.orig" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/development.sphinx.conf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/config/sphinx.yml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20110416133535_add_category_id_to_category.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/db/migrate/20110416133627_add_category_index_to_category.rb" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/statometru.iml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.rakeTasks" afterPath="$PROJECT_DIR$/.idea/.rakeTasks" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/search_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/search_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models/institution.rb" afterPath="$PROJECT_DIR$/app/models/institution.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/search/index.html.erb" afterPath="$PROJECT_DIR$/app/views/search/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/spec/controllers/search_controller_spec.rb" afterPath="$PROJECT_DIR$/spec/controllers/search_controller_spec.rb" />
-    </list>
+    <list default="true" id="b1bf803a-3a00-43d2-af93-8afe73dbe3ab" name="Default" comment="" />
     <ignored path="statometru.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
