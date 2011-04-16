@@ -43,8 +43,8 @@
       <%= form_tag('/find', :method => "get") do %>
           <fieldset>
             <div id="fields">
-              <%= text_field_tag :institution, :value => "Institutia (ex. Spitalul Municipal)" %>
-              <%= text_field_tag :location, :value => "Locatie (ex. Sibiu)" %>
+              <%= text_field_tag :institution, "Institutia (ex. Spitalul Municipal)" %>
+              <%= text_field_tag :location, "Locatie (ex. Sibiu)" %>
             </div>
             <%= submit_tag 'Cauta', :class => "Button" %>
           </fieldset>
