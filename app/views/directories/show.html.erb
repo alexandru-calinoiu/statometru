@@ -1,0 +1,15 @@
+<div id="metrics">
+  <ul>
+    <% @categories.each do |category| %>
+        <%= render :partial => 'institutions/category', :locals => { :category => category } %>
+    <% end %>
+  </ul>
+</div>
+
+<div>
+  <ul id="search">
+    <%= render @institutions %>
+  </ul>
+
+  <%= will_paginate @institutions %>
+</div>

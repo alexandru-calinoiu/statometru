@@ -3,13 +3,7 @@
         <div>Cautarea nu a returnat nimic</div>
     <% else %>
         <ul id="search">
-          <% @institutions.each do |institution| %>
-              <li>
-                <%= link_to institution.name, "/institutie/#{institution.id}", :class => "institution" %>
-                <%= " #{institution.location.name}" unless institution.location.nil? %>
-                <span class="meta"><%= pluralize(institution.rate_count, 'vot', 'voturi') %></span>
-              </li>
-          <% end %>
+          <%= render @institutions %>
         </ul>
         <%= will_paginate @institutions %>
     <% end %>

@@ -1,13 +1,5 @@
 class InstitutionsController < ApplicationController
 
-  def index
-    @categories = Category.find_all_by_category_id(0)
-
-    respond_to do |format|
-      format.html
-    end
-  end
-
   def details
     @institution = Institution.find(params[:id]) rescue nil
     if @institution.blank?
