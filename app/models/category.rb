@@ -12,4 +12,7 @@
 
 class Category < ActiveRecord::Base
   attr_accessible :name
+
+  belongs_to :category, :foreign_key => :category_id
+  has_many :categories, :foreign_key => :category_id
 end
