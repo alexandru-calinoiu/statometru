@@ -107,6 +107,7 @@ DEPENDENCIES
   factory_girl_rails
   faker (= 0.9.5)
   mysql
+  nokogiri
   rails (= 3.0.6)
   rspec (= 2.5.0)
   rspec-rails (= 2.5.0)

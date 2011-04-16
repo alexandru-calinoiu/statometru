@@ -1,8 +1,8 @@
-<h1>Search#search</h1>
+<h1>Do the search</h1>
 
-<%= form_for(:search) do |f| %>
-    <%= f.text_field :search_term %>
-    <%= f.submit 'search' %>
+<%= form_tag('/find', :method => "get") do %>
+    <%= text_field_tag :search_term %>
+    <%= submit_tag 'Search' %>
 <% end %>
 
 <% @institutions.each do |institution| %>

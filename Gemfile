@@ -36,6 +36,7 @@ group :development do
   gem 'rspec-rails', '2.5.0'
   gem 'annotate-models', '1.0.4'
   gem 'faker', '0.9.5'
+  gem 'nokogiri'
 end
 
 group :test do
