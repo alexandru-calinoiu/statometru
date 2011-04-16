@@ -1,15 +1,21 @@
 <h1>Institutii</h1>
 
-<%= form_for(:search) do |f| %>
-    <%= f.text_field :search_term %>
-    <%= f.submit 'search' %>
+<%= form_tag('/find', :method => "get") do %>
+    <%= text_field_tag :search_term %>
+    <%= submit_tag 'Search' %>
 <% end %>
 
-<% @institutions.each do |institution| %>
-    <p>
-      <%= link_to institution.name, "/institutie/#{institution.id}" %>
-    </p>
-
+<% if @institutions %>
+    <% if @institutions.blank? %>
+        <div>Cautarea nu a returnat nimic</div>
+    <% else %>
+        <% @institutions.each do |institution| %>
+            <p>
+              <%= link_to institution.name, "/institutie/#{institution.id}" %>
+            </p>
+        <% end %>
+        <%= will_paginate @institutions %>
+    <% end %>
+<% else %>
+    <div>Trebuie sa introduci cel putin un cuvant</div>
 <% end %>
-
-<%= will_paginate @institutions %>

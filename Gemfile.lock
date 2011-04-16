@@ -87,6 +87,7 @@ GEM
     rake (0.8.7)
     rpx_now (0.6.24)
       json_pure
+    riddle (1.2.2)
     rspec (2.5.0)
       rspec-core (~> 2.5.0)
       rspec-expectations (~> 2.5.0)
@@ -103,6 +104,9 @@ GEM
     spork (0.9.0.rc5)
     sqlite3 (1.3.3)
     sqlite3 (1.3.3-x86-mingw32)
+    thinking-sphinx (2.0.3)
+      activerecord (>= 3.0.3)
+      riddle (>= 1.2.2)
     thor (0.14.6)
     treetop (1.4.9)
       polyglot (>= 0.3.1)
@@ -128,11 +132,13 @@ DEPENDENCIES
   faker (= 0.9.5)
   jquery-rails
   mysql
+  nokogiri
   rails (= 3.0.6)
   rspec (= 2.5.0)
   rspec-rails (= 2.5.0)
   spork (= 0.9.0.rc5)
   sqlite3
+  thinking-sphinx
   webrat (= 0.7.3)
   webrat-rspec-rails (= 0.1.1)
   will_paginate (= 3.0.pre2)

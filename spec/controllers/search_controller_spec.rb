@@ -15,7 +15,7 @@ describe SearchController do
 
     it "should have a search term input" do
       get 'index'
-      response.should have_selector("input", :id => 'search_search_term')
+      response.should have_selector("input", :id => 'search_term')
     end
   end
 end
