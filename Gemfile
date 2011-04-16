@@ -4,6 +4,8 @@ gem 'rails', '3.0.6'
 gem 'devise', '1.2.1'
 gem 'devise_rpx_connectable'
 gem 'will_paginate', '3.0.pre2'
+gem "jquery-rails"
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

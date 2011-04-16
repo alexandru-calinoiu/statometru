@@ -1,0 +1,18 @@
+<h1>
+  <%= @institution.name %>
+</h1>
+
+<h3>
+  Nota: <%= @institution.rating %>
+</h3>
+
+<h3>
+  Adresa:
+</h3>
+<p>
+  <%= @institution.address %>
+</p>
+
+<% 10.times do |i| %>
+  <%= link_to "Nota #{i+1}", "/institutie/#{@institution.id}/noteaza/#{i+1}", :style => "#{'font-weight:bold;' if ((!@current_rate.blank?) and (@current_rate.value == i+1))}" %>
+<% end %>

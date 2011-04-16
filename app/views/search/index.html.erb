@@ -1,4 +1,4 @@
-<h1>Search#search</h1>
+<h1>Institutii</h1>
 
 <%= form_for(:search) do |f| %>
     <%= f.text_field :search_term %>
@@ -6,7 +6,10 @@
 <% end %>
 
 <% @institutions.each do |institution| %>
-    <p><%= institution.name %></p>
+    <p>
+      <%= link_to institution.name, "/institutie/#{institution.id}" %>
+    </p>
+
 <% end %>
 
 <%= will_paginate @institutions %>

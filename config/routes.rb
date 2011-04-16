@@ -1,10 +1,14 @@
 Statometru::Application.routes.draw do
 
-  get "pages/index"
-
-  root :to => "pages#index"
+  root :to => "search#index"
   devise_for :users
-  
+
+  match 'institutie/:id' => 'institutions#details'
+  match 'institutie/:id/noteaza/:nota' => 'institutions#rate'
+
+# viitorul root
+#  get "pages/index"
+
   resources :search, :only => [:search]
   match "/search" => "search#index"
   
