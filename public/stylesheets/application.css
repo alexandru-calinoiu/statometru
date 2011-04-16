@@ -406,3 +406,17 @@ a:hover {
 	text-align: center;
 	margin: 10px 0;
 }
+
+.Button {
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	padding: 0 7px;
+	background: #E82629;
+	color: #FFFFFF;
+	border-top: 1px solid #EF4A51;
+	border-left: 1px solid #EF4A51;
+	border-bottom: 1px solid #CF0C14;
+	border-right: 1px solid #CF0C14;
+}
