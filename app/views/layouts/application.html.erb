@@ -5,7 +5,9 @@
 
     <%= stylesheet_link_tag 'application' %>
 
-    <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "jquery.cookie" %>
+
 </head>
 <body>
 	<div id="wrapper">
@@ -14,12 +16,24 @@
 		</a>
 
 		<div id="main">
-          <% if current_user.blank? %>
-            <%= link_to_rpx "Sign in", user_session_url %>
-          <% else %>
-            Welcome <%= current_user.email %>
-            <%= link_to "Sign out", destroy_user_session_url %>
-          <%end%>
+
+            <% if current_user %>
+            <li>
+                Hi, <%= h(current_user.username) %> <%= link_to 'Logout', '/logout' %>
+            </li>
+            <% else %>
+            <li>
+              <!--
+                <%=raw RPXNow.popup_code 'Login', 'statometruro', user_sessions_url %>
+              -->
+            </li>
+            <% end %>
+
+          <% if flash[:notice] %>
+            <div class="alert">
+              <%= flash[:notice] %>
+            </div>
+          <% end %>
 
           <%= yield %>
 

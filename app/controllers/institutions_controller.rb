@@ -1,24 +1,31 @@
 class InstitutionsController < ApplicationController
 
-before_filter :authenticate_user!, :only => [:rate]
+  #before_filter :require_user, :only => [:rate]
+
 
   def details
-    @institution = Institution.find(params[:id])
+    @institution = Institution.find(params[:id]) rescue nil
+    if @institution.blank?
+      flash[:notice] = "Wrong institution"
+      redirect_to "/"
+    end
+
     @current_rate = Rate.where(:user_id => current_user.id, :institution_id => @institution.id).first rescue nil
-  end
-
-  def create
-  end
-
-  def update
-  end
-
-  def delete
+    store_location
   end
 
   def rate
-    institution = Institution.find(params[:id])
+    institution = Institution.find(params[:id]) rescue nil
+    if institution.blank?
+      flash[:notice] = "Nu exista institutia"
+      redirect_to "/"
+    end
+
     nota = params[:nota].to_i
+    if nota.blank? or nota < 1 or nota > 10
+      flash[:notice] = "Nota gresita"
+      redirect_to "/"
+    end
 
     current_rate = Rate.where(:user_id => current_user.id, :institution_id => institution.id).first
     if current_rate.blank?
@@ -30,5 +37,6 @@ before_filter :authenticate_user!, :only => [:rate]
 
     redirect_to "/institutie/#{institution.id}"
   end
+
 
 end
