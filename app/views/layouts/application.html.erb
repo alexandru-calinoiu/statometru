@@ -7,47 +7,58 @@
 
   <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag "jquery.cookie" %>
+  <%= javascript_include_tag "rangeinput" %>
 
 </head>
 <body>
   <div id="wrapper">
+    <div class="logout">
+      <%= render :partial => "shared/user" %>
+    </div>
     <a id="logo" href="/">
       statometru.ro
     </a>
+
+    <% step1, step2 = "", "" %>
+    <% step1 = "current" unless (action_name == "details" or action_name == "rate") %>
+    <% step2 = "current" if step1.blank? %>
+
 
     <div id="main">
 
       <div id="action">
         <ul id="steps">
-          <li id="step1" class="current"><span>1</span> Alege institutia pe care vrei sa o ratezi</li>
-          <li id="step2"><span>2</span>Rateaza institutia</li>
+          <li id="step1" class="<%= step1 %>"><span>1</span> Alege institutia pe care vrei sa o ratezi</li>
+          <li id="step2" class="<%= step2 %>"><span>2</span>Rateaza institutia</li>
         </ul>
 
-        <%= form_tag('/find', :method => "get") do %>
-          <fieldset>
-            <div id="fields">
-              <%= text_field_tag :institution, :value => "Institutia (ex. Spitalul Municipal)" %>
-              <%= text_field_tag :location, :value => "Locatie (ex. Sibiu)" %>
-            </div>
-            <%= submit_tag 'Cauta', :class => "Button" %>
-          </fieldset>
-        <% end %>
-      </div>
-
-      <div id="content">
-        <% if current_user %>
-          <li>
-            Hi, <%= h(current_user.username) %> <%= link_to 'Logout', '/logout' %>
-          </li>
+        <% if step1%>
+          <%= form_tag('/find', :method => "get") do %>
+            <fieldset>
+              <div id="fields">
+                <%= text_field_tag :institution, :value => "Institutia (ex. Spitalul Municipal)" %>
+                <%= text_field_tag :location, :value => "Locatie (ex. Sibiu)" %>
+              </div>
+              <%= submit_tag 'Cauta', :class => "Button" %>
+            </fieldset>
+          <% end %>
         <% end %>
 
-        <% if flash[:notice] %>
-          <div class="alert">
-            <%= flash[:notice] %>
+        <% unless step1.blank? %>
+          <div id="content">
+            <%= render :partial => "shared/errors" %>
+            <%= yield %>
           </div>
         <% end %>
 
-        <%= yield %>
+        <% unless step2.blank? %>
+          <div id="title"><%= @institution.name %></div>
+
+          <%= render :partial => "shared/errors" %>
+          <%= yield %>
+
+        <% end %>
+
       </div>
     </div>
 

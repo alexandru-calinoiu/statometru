@@ -1,0 +1,5 @@
+<% if current_user %>
+  <li>
+    Hi, <%= h(current_user.username) %> <%= link_to 'Logout', '/logout' %>
+  </li>
+<% end %>
