@@ -1,21 +1,20 @@
-<h1>Institutii</h1>
-
-<%= form_tag('/find', :method => "get") do %>
-    <%= text_field_tag :search_term %>
-    <%= text_field_tag :search_location %>
-    <%= submit_tag 'Search' %>
-<% end %>
-
 <% if @institutions %>
     <% if @institutions.blank? %>
         <div>Cautarea nu a returnat nimic</div>
     <% else %>
-        <% @institutions.each do |institution| %>
-            <p>
-              <%= link_to institution.name, "/institutie/#{institution.id}" %>
-              <%= "| #{institution.location.name}" unless institution.location.nil? %>
-            </p>
-        <% end %>
+        <ul id="search">
+          <% @institutions.each do |institution| %>
+              <li>
+                <%= link_to institution.name, "/institutie/#{institution.id}", :class => "institution" %>
+                <%= " #{institution.location.name}" unless institution.location.nil? %>
+                &raquo;
+                <%= "#{institution.category.name}" unless institution.category.nil? %>
+                &raquo;
+                <%= "#{institution.category.name}" unless institution.category.nil? %>
+                <span class="meta"><%= "#{institution.rating} voturi" %></span>
+              </li>
+          <% end %>
+        </ul>
         <%= will_paginate @institutions %>
     <% end %>
 <% else %>

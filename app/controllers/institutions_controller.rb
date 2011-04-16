@@ -40,13 +40,13 @@ class InstitutionsController < ApplicationController
   end
 
   def find
-    if !params[:search_term].blank?
-      @search_terms = params[:search_term].split
-      @query = "@name *#{@search_terms.join("* *")}*"
+    if !params[:institution].blank?
+      @search_institution = params[:institution].split
+      @query = "@name *#{@search_institution.join("* *")}*"
     end
 
-    if !params[:search_location].blank?
-      @search_location = params[:search_location].split
+    if !params[:location].blank?
+      @search_location = params[:location].split
       @query = "#{@query} @location_name *#{@search_location.join("* *")}*"
     end
 
