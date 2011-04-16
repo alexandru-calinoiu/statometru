@@ -1,21 +1,40 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-  <title>Statometru</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+	<title>statometru.ro</title>
+
+    <%= stylesheet_link_tag 'application' %>
+
+    <%= javascript_include_tag :defaults %>
 </head>
 <body>
+	<div id="wrapper">
+		<a id="logo" href="/">
+			statometru.ro
+		</a>
 
-<% if current_user.blank? %>
-  <%= link_to_rpx "Sign in", user_session_url %>
-<% else %>
-  Welcome <%= current_user.email %>
-  <%= link_to "Sign out", destroy_user_session_url %>
-<%end%>
+		<div id="main">
+          <% if current_user.blank? %>
+            <%= link_to_rpx "Sign in", user_session_url %>
+          <% else %>
+            Welcome <%= current_user.email %>
+            <%= link_to "Sign out", destroy_user_session_url %>
+          <%end%>
 
-<%= yield %>
+          <%= yield %>
 
+		</div>
+		<div id="footer">
+			<p>
+				<a href="#">Blog</a> |
+				<a href="#">Despre StatoMetru</a> |
+				<a href="#">Contact</a>
+
+			</p>
+			<p>
+				&copy; 2011 statometru.ro
+			</p>
+		</div>
+	</div>
 </body>
 </html>
