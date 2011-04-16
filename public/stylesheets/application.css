@@ -164,6 +164,7 @@ a:hover {
 	display: inline-block;
 	font-size: 16px;
 	text-align: left;
+	overflow: hidden;
 }
 	#metrics .label {
 		height: 20px;
@@ -171,8 +172,7 @@ a:hover {
 		float: left;
 		line-height: 24px;
 		clear: right;
-		margin: 0 10px 0 0;
-		line-height: 24px;
+		font-size: 13px;
 	}
 	#metrics .icon {
 		height: 24px;
@@ -180,7 +180,8 @@ a:hover {
 		background: #DDD;
 		display: block;
 		float: left;
-		margin: 0 15px 0 0;
+		margin: 0 10px 0 0;
+		display: none;
 	}
 	#metrics .statometru {
 		color: #000000;
@@ -210,15 +211,17 @@ a:hover {
 	height: 45px;
 	font-size: 14px;
 	margin: 0 0 8px 0;
+	text-align: center;
 }
 	#steps li {
-		display: block;
+		display: inline-block;
 		list-style-type: none;
 		float: left;
 		line-height: 26px;
 		font-size: 16px;
 		padding: 10px;
 		color: #A8B2BC;
+		width: 200pxş
 	}
 	
 	#steps span {
@@ -245,12 +248,6 @@ a:hover {
 			background: #26ca22;
 		}
 
-	#step1 {
-		width: 370px;
-	}
-	#step2 {
-		width: 230px;
-	}
 
 
 #search {
@@ -403,4 +400,9 @@ a:hover {
 	font-style: italic;
 	padding: 4px 10px 4px 0;
 	text-align: right;
+}
+
+.pagination {
+	text-align: center;
+	margin: 10px 0;
 }

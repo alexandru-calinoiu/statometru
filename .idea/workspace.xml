@@ -51,19 +51,19 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="15" column="0" selection-start="378" selection-end="378" vertical-scroll-proportion="7.625">
+            <state line="69" column="8" selection-start="2014" selection-end="2014" vertical-scroll-proportion="0.806338">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="details.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="75" column="0" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.71394515">
+            <state line="52" column="24" selection-start="1589" selection-end="1589" vertical-scroll-proportion="-32.5">
               <folding />
             </state>
           </provider>
@@ -118,8 +118,8 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_errors.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_user.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/institutions/details.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -954,16 +954,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="15" column="0" selection-start="378" selection-end="378" vertical-scroll-proportion="7.625">
+        <state line="52" column="24" selection-start="1589" selection-end="1589" vertical-scroll-proportion="-32.5">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="0" selection-start="2132" selection-end="2132" vertical-scroll-proportion="0.71394515">
+        <state line="69" column="8" selection-start="2014" selection-end="2014" vertical-scroll-proportion="0.806338">
           <folding />
         </state>
       </provider>

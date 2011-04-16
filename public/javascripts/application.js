@@ -6,20 +6,25 @@ $(function() {
     institution_value = $('#institution').val();
     location_default_value = $('#location').val();
     setInterval(instantSearch, 1000);
-    $('#location').change(function() {
-        $.get('/locations/autocomplete', {value: $(this).val()}, function(data) {
 
-        });
+    $('#location').focus(function() {
+        $('#location').val('');
+        $('#location').css('color', 'black');
     });
+
+    $('#institution').focus(function() {
+        $('#institution').val('');
+        $('#institution').css('color', 'black');
+    })
 });
 
 function instantSearch()
 {
     var current_value = $('#institution').val();
     var location_value = $('#location').val();
-    if(institution_value != current_value)
+    if(institution_value != current_value || location_default_value != location_value)
     {
-        if(current_value.length > 1)
+        if(current_value.length > 1 || location_value.length > 1)
         {
             $.get('/find', {
                     institution: (current_value == institution_default_value ? '' : current_value),
