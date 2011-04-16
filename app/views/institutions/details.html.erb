@@ -11,9 +11,9 @@
 <!--  <input type="text" value=<%= cookies["institutie#{@institution.id}"] || 5 %> name="nota" onchange="$.cookie('institutie'+'<%= @institution.id %>', nota.value);"> -->
 
     <% unless current_user %>
-      <%=raw RPXNow.popup_code 'Noteaza', 'statometruro', user_sessions_url %>
+      <%=raw RPXNow.popup_code 'Noteaza', 'statometruro', user_sessions_url, :html => {:class => "Button"} %>
     <% else %>
-      <input type="submit" id="rate" value="Da nota!">
+      <input type="submit" id="rate" value="Da nota!" class="Button">
     <% end %>
   </fieldset>
 </form>
