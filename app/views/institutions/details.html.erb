@@ -1,29 +1,85 @@
-<h1>
-  <%= @institution.name %>
-</h1>
-
-<h3>
-  Nota: <%= @institution.rating %>
-</h3>
-
-<h3>
-  Adresa:
-</h3>
-<p>
-  <%= @institution.address %>
-</p>
-
 <form action="/institutie/<%= @institution.id %>/noteaza" method="get">
-  <input type="text" value=<%= cookies["institutie#{@institution.id}"] || 5 %> name="nota" onchange="$.cookie('institutie'+'<%= @institution.id %>', nota.value);">
+  <fieldset>
+      <div id="avatar">
+          <img src="/images/ratings/rating5.png" alt="" />
+      </div>
+      <div id="message">&nbsp;</div>
+      <div id="slider">
+        <input type="range" name="nota" id="rating" min="1" max="10" value="<%= cookies["institutie#{@institution.id}"] || 5 %>" step="1" />
+      </div>
 
+<!--  <input type="text" value=<%= cookies["institutie#{@institution.id}"] || 5 %> name="nota" onchange="$.cookie('institutie'+'<%= @institution.id %>', nota.value);"> -->
 
-  <% unless current_user %>
-    <%=raw RPXNow.popup_code 'Noteaza', 'statometruro', user_sessions_url %>
-  <% else %>
-    <input type="submit" value="Noteaza">
-  <% end %>
-
-  <!-- input type="submit" value="noteaza" class="rpxnow" -->
+    <% unless current_user %>
+      <%=raw RPXNow.popup_code 'Noteaza', 'statometruro', user_sessions_url %>
+    <% else %>
+      <input type="submit" id="rate" value="Da nota!">
+    <% end %>
+  </fieldset>
 </form>
 
-<%# link_to "Nota #{i+1}", "/institutie/#{@institution.id}/noteaza/#{i+1}", :style => "#{'font-weight:bold;' if ((!@current_rate.blank?) and (@current_rate.value == i+1))}" %>
+<div id="profile">
+    <div id="address">Adresa: <%= @institution.address %></div>
+    <div id="statometru">Statometrul curent: <%= @institution.rating %></div>
+    <div id="ratings"><%= @institution.rate_count %> note</div>
+</div>
+
+<script type="text/javascript">
+
+var rating = <%= cookies["institutie#{@institution.id}"] || 5 %>;
+
+var text = new Array();
+text[0] = 'Mesaj 1';
+text[1] = 'Mesaj 2';
+text[2] = 'Mesaj 3';
+text[3] = 'Mesaj 4';
+text[4] = 'Mesaj 5';
+text[5] = 'Mesaj 6';
+text[6] = 'Mesaj 7';
+text[7] = 'Mesaj 8';
+text[8] = 'Mesaj 9';
+text[9] = 'Mesaj 10';
+
+function rate(index, first) {
+
+//	var api = $('#rating').data('range');
+
+//	if(first) {
+//		api.setValue(index);
+//	}
+
+	$('#avatar').find('img').attr('src', '/images/ratings/rating'+index+'.png');
+	$('#message').text(text[index-1]);
+}
+
+function preload(arrayOfImages) {
+    $(arrayOfImages).each(function(){
+        $('<img/>')[0].src = this;
+    });
+}
+
+preload([
+    '/images/ratings/rating1.png',
+    '/images/ratings/rating2.png',
+    '/images/ratings/rating3.png',
+    '/images/ratings/rating4.png',
+    '/images/ratings/rating5.png',
+    '/images/ratings/rating6.png',
+    '/images/ratings/rating7.png',
+    '/images/ratings/rating8.png',
+    '/images/ratings/rating9.png',
+    '/images/ratings/rating10.png'
+]);
+
+$(document).ready(function() {
+	$("#rating").rangeinput({
+		change: function(event, value) {
+			rate(value);
+            $.cookie('institutie'+'<%= @institution.id %>', $('#rating').val());
+		}
+	});
+
+	rate(6, true);
+
+});
+</script>
