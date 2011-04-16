@@ -2,6 +2,7 @@ require "faker"
 
 def make_institutions
   Institution.delete_all
+  Rate.delete_all
   30000.times do
     name = Faker::Name.name
     address = "#{Faker::Address.city}, #{Faker::Address.street_address(true)}"
