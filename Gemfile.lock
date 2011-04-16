@@ -47,6 +47,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
+    mysql (2.8.1-x86-mingw32)
     nokogiri (1.4.4.1-x86-mingw32)
     polyglot (0.3.1)
     rack (1.2.2)
@@ -100,6 +101,7 @@ DEPENDENCIES
   annotate-models (= 1.0.4)
   factory_girl_rails (= 1.1.beta1)
   faker (= 0.9.5)
+  mysql
   rails (= 3.0.6)
   rspec (= 2.5.0)
   rspec-rails (= 2.5.0)
