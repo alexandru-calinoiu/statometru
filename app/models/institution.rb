@@ -19,4 +19,12 @@ class Institution < ActiveRecord::Base
 
   has_one :category
   has_one :location
+
+  def application()
+    #code here
+  end
+
+  define_index do
+    indexes name, :sortable => true
+  end
 end
