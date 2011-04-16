@@ -11,12 +11,12 @@ class SearchController < ApplicationController
   def find
     if !params[:search_term].blank?
       @search_terms = params[:search_term].split
-      @query = "@name #{@search_terms.join("* *")}"
+      @query = "@name *#{@search_terms.join("* *")}*"
     end
 
     if !params[:search_location].blank?
       @search_location = params[:search_location].split
-      @query = "#{@query} @location_name #{@search_location.join("* *")}"
+      @query = "#{@query} @location_name *#{@search_location.join("* *")}*"
     end
 
     @institutions = Institution.search(@query, :page => params[:page], :per_page => 10, :match_mode => :extended)

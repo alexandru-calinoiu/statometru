@@ -2,6 +2,7 @@
 
 <%= form_tag('/find', :method => "get") do %>
     <%= text_field_tag :search_term %>
+    <%= text_field_tag :search_location %>
     <%= submit_tag 'Search' %>
 <% end %>
 
@@ -12,6 +13,7 @@
         <% @institutions.each do |institution| %>
             <p>
               <%= link_to institution.name, "/institutie/#{institution.id}" %>
+              <%= "| #{institution.location.name}" unless institution.location.nil? %>
             </p>
         <% end %>
         <%= will_paginate @institutions %>
