@@ -5,7 +5,7 @@ describe SearchController do
 
   describe "GET 'index'" do
     before :each do
-      Factory(:institution)
+      @institution = Factory(:institution)
     end
 
     it "should be successful" do
@@ -13,9 +13,14 @@ describe SearchController do
       response.should be_success
     end
 
-    it "should have a search term input" do
+    it "should contain a warning if not search term" do
       get 'index'
-      response.should have_selector("input", :id => 'search_search_term')
+      response.should have_selector("div", :content => "Trebuie sa introduci cel putin un cuvant")
+    end
+
+    it 'should contain results for a search term' do
+      get 'index', :search => { :search_term => @institution.name }
+      response.should have_selector("p", :content => @institution.name)
     end
   end
 end

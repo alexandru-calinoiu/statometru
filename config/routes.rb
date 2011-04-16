@@ -1,8 +1,6 @@
 Statometru::Application.routes.draw do
 
-  resources :search, :only => [:search]
-
-  match "/search" => "search#index"
+  resources :search, :only => [:index]
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

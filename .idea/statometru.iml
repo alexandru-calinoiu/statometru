@@ -66,6 +66,12 @@
     </requirement>
     <requirement>
       <requirement>
+        <dependency name="thinking-sphinx" version="0" bound="GREATER_OR_EQUAL" git="false" path="false" doRequire="true" />
+      </requirement>
+      <source from="Gemfile" />
+    </requirement>
+    <requirement>
+      <requirement>
         <dependency name="webrat" version="0.7.3" bound="EQUAL" git="false" path="false" doRequire="true" />
       </requirement>
       <source from="Gemfile" />
@@ -120,6 +126,8 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] activerecord (v3.0.6, /var/lib/gems/1.8/gems/activerecord-3.0.6)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rails (v3.0.6, /var/lib/gems/1.8/gems/rails-3.0.6)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] will_paginate (v3.0.pre2, /var/lib/gems/1.8/gems/will_paginate-3.0.pre2)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] thinking-sphinx (v2.0.3, /var/lib/gems/1.8/gems/thinking-sphinx-2.0.3)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] riddle (v1.2.2, /var/lib/gems/1.8/gems/riddle-1.2.2)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mail (v2.2.15, /var/lib/gems/1.8/gems/mail-2.2.15)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] treetop (v1.4.9, /var/lib/gems/1.8/gems/treetop-1.4.9)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] rack-mount (v0.6.14, /var/lib/gems/1.8/gems/rack-mount-0.6.14)" level="application" />
@@ -131,9 +139,9 @@
     <orderEntry type="library" scope="PROVIDED" name="[gem] arel (v2.0.9, /var/lib/gems/1.8/gems/arel-2.0.9)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] builder (v2.1.2, /var/lib/gems/1.8/gems/builder-2.1.2)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] tzinfo (v0.3.26, /var/lib/gems/1.8/gems/tzinfo-0.3.26)" level="application" />
+    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.8.7, /var/lib/gems/1.8/gems/rake-0.8.7)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] polyglot (v0.3.1, /var/lib/gems/1.8/gems/polyglot-0.3.1)" level="application" />
     <orderEntry type="library" scope="PROVIDED" name="[gem] mime-types (v1.16, /var/lib/gems/1.8/gems/mime-types-1.16)" level="application" />
-    <orderEntry type="library" scope="PROVIDED" name="[gem] rake (v0.8.7, /var/lib/gems/1.8/gems/rake-0.8.7)" level="application" />
   </component>
 </module>
 
