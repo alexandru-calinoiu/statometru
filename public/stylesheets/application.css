@@ -75,6 +75,7 @@ a:hover {
 #wrapper {
 	width: 700px;
 	margin: 0 auto;
+	position: relative;
 }
 
 	#logo {
@@ -405,4 +406,24 @@ a:hover {
 .pagination {
 	text-align: center;
 	margin: 10px 0;
+}
+
+.Button {
+	display: block;
+	height: 26px;
+	line-height: 26px;
+	text-align: center;
+	padding: 0 7px;
+	background: #E82629;
+	color: #FFFFFF;
+	border-top: 1px solid #EF4A51;
+	border-left: 1px solid #EF4A51;
+	border-bottom: 1px solid #CF0C14;
+	border-right: 1px solid #CF0C14;
+}
+
+#logout {
+	position: absolute;
+	top: 10px;
+	right: 5px;
 }
