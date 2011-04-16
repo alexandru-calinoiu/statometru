@@ -1,26 +1,20 @@
 require "faker"
 
-def make_locations
-  10.times do
-    name = Faker::Address.city
-    type = rand(4)
-    Location.create!(:name => name, :type => type)
-  end
-end
-
 def make_institutions
-  99.times do
+  Institution.delete_all
+  30000.times do
     name = Faker::Name.name
     address = "#{Faker::Address.city}, #{Faker::Address.street_address(true)}"
-    Institution.create!(:name => name, :address => address, :location_id => rand(10))
+    Institution.create!(:name => name,
+                        :address => address,
+                        :location => Location.find_by_id(rand(10000) + 1),
+                        :category => Category.find_by_id(rand(80) + 1))
   end
 end
 
 namespace :db do
   desc 'Fill database with sample data'
-  task :populate => :environment do
-    Rake::Task['db:reset'].invoke
-    make_locations()
+  task :populate_institutions => :environment do
     make_institutions()
   end
 end
