@@ -1,0 +1,5 @@
+<li>
+  <%= link_to institution.name, "/institutie/#{institution.id}", :class => "institution" %>
+  <%= " #{institution.location.name}" unless institution.location.nil? %>
+  <span class="meta"><%= pluralize(institution.rate_count, 'vot', 'voturi') %></span>
+</li>
