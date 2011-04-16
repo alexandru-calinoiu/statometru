@@ -1,0 +1,12 @@
+<h1>Search#search</h1>
+
+<%= form_for(:search) do |f| %>
+    <%= f.text_field :search_term %>
+    <%= f.submit 'search' %>
+<% end %>
+
+<% @institutions.each do |institution| %>
+    <p><%= institution.name %></p>
+<% end %>
+
+<%= will_paginate @institutions %>
