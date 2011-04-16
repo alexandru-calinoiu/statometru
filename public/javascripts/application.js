@@ -22,7 +22,7 @@ function instantSearch()
 {
     var current_value = $('#institution').val();
     var location_value = $('#location').val();
-    if(institution_value != current_value || location_default_value != location_value)
+    if(((institution_value != current_value) && (current_value != '')) || ((location_default_value != location_value) && (location_value != '')))
     {
         if(current_value.length > 1 || location_value.length > 1)
         {
@@ -34,5 +34,7 @@ function instantSearch()
             });
         }
     }
+
     institution_value = current_value;
+    location_default_value = location_value;
 }
