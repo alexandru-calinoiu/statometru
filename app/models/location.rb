@@ -14,4 +14,8 @@
 class Location < ActiveRecord::Base
   attr_accessible :name, :location_type
   has_many :institutions
+
+  define_index do
+    indexes name, :sortable => true
+  end
 end
