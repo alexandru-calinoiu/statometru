@@ -10,37 +10,20 @@
 
 </head>
 <body>
-<div id="wrapper">
-  <a id="logo" href="/">
-    statometru.ro
-  </a>
+  <div id="wrapper">
+    <a id="logo" href="/">
+      statometru.ro
+    </a>
 
     <div id="main">
 
-        <% if current_user %>
-        <li>
-            Hi, <%= h(current_user.username) %> <%= link_to 'Logout', '/logout' %>
-        </li>
-        <% else %>
-        <li>
-          <!--
-            <%=raw RPXNow.popup_code 'Login', 'statometruro', user_sessions_url %>
-          -->
-        </li>
-        <% end %>
+      <div id="action">
+        <ul id="steps">
+          <li id="step1" class="current"><span>1</span> Alege institutia pe care vrei sa o ratezi</li>
+          <li id="step2"><span>2</span>Rateaza institutia</li>
+        </ul>
 
-      <% if flash[:notice] %>
-        <div class="alert">
-          <%= flash[:notice] %>
-        </div>
-      <% end %>
-
-    <div id="action">
-      <ul id="steps">
-        <li id="step1" class="current"><span>1</span> Alege institutia pe care vrei sa o ratezi</li>
-        <li id="step2"><span>2</span>Rateaza institutia</li>
-      </ul>
-      <%= form_tag('/find', :method => "get") do %>
+        <%= form_tag('/find', :method => "get") do %>
           <fieldset>
             <div id="fields">
               <%= text_field_tag :institution, :value => "Institutia (ex. Spitalul Municipal)" %>
@@ -48,25 +31,37 @@
             </div>
             <%= submit_tag 'Cauta', :class => "Button" %>
           </fieldset>
-      <% end %>
+        <% end %>
+      </div>
+
+      <div id="content">
+        <% if current_user %>
+          <li>
+            Hi, <%= h(current_user.username) %> <%= link_to 'Logout', '/logout' %>
+          </li>
+        <% end %>
+
+        <% if flash[:notice] %>
+          <div class="alert">
+            <%= flash[:notice] %>
+          </div>
+        <% end %>
+
+        <%= yield %>
+      </div>
     </div>
 
-    <div id="content">
-      <%= yield %>
+    <div id="footer">
+      <p>
+        <a href="#">Blog</a> |
+        <a href="#">Despre StatoMetru</a> |
+        <a href="#">Contact</a>
+      </p>
+
+      <p>
+        &copy; 2011 statometru.ro
+      </p>
     </div>
-
   </div>
-  <div id="footer">
-    <p>
-      <a href="#">Blog</a> |
-      <a href="#">Despre StatoMetru</a> |
-      <a href="#">Contact</a>
-    </p>
-
-    <p>
-      &copy; 2011 statometru.ro
-    </p>
-  </div>
-</div>
 </body>
 </html>
