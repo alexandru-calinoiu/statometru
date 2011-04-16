@@ -18,15 +18,4 @@ describe SearchController do
       response.should have_selector("input", :id => 'search_term')
     end
   end
-
-  describe "get 'find'" do
-    before :each do
-      @institution = Factory(:institution)
-    end
-
-    it "for a name will return that institution" do
-      get 'find', :search_term => @institution.name
-      response.should have_selector("p", :content => @institution.name)
-    end
-  end
 end
