@@ -12,9 +12,7 @@
 </head>
 <body>
   <div id="wrapper">
-    <div class="logout">
-      <%= render :partial => "shared/user" %>
-    </div>
+    <%= render :partial => "shared/user" %>
     <a id="logo" href="/">
       statometru.ro
     </a>
@@ -40,7 +38,7 @@
                 <%= text_field_tag :institution, "Institutia (ex. Spitalul Municipal)" %>
                 <%= text_field_tag :location, "Locatie (ex. Sibiu)" %>
               </div>
-              <%= submit_tag 'Caut', :class => "Button" %>
+              <%= submit_tag 'Caută', :class => "Button" %>
             </fieldset>
           <% end %>
         <% end %>

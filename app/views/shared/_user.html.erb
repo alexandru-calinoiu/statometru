@@ -1,5 +1,5 @@
 <% if current_user %>
-  <li>
-    Hi, <%= h(current_user.username) %> <%= link_to 'Logout', '/logout' %>
-  </li>
+   <span class="logout">
+     Salut <%= h(current_user.username) %>! <%= link_to 'Ieși din cont', '/logout' %>
+   </span>
 <% end %>

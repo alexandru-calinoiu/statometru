@@ -81,16 +81,34 @@
       <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="247" column="21" selection-start="3996" selection-end="3996" vertical-scroll-proportion="-26.68">
+            <state line="85" column="0" selection-start="1416" selection-end="1416" vertical-scroll-proportion="-18.6">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="_errors.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_errors.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="-3.125">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="63" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.71188474">
+            <state line="14" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="-6.5833335">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_user.html.erb" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/shared/_user.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="70" selection-start="117" selection-end="117" vertical-scroll-proportion="0.036014404">
               <folding />
             </state>
           </provider>
@@ -131,13 +149,13 @@
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_errors.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/shared/_user.html.erb" />
         <option value="$PROJECT_DIR$/app/views/institutions/_institution.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/institutions_controller.rb" />
-        <option value="$PROJECT_DIR$/public/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/institutions/_category.html.erb" />
         <option value="$PROJECT_DIR$/app/views/institutions/details.html.erb" />
+        <option value="$PROJECT_DIR$/public/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/shared/_user.html.erb" />
       </list>
     </option>
   </component>
@@ -916,20 +934,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_errors.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="0.08561644">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/shared/_user.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="0" selection-start="122" selection-end="122" vertical-scroll-proportion="0.08561644">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="2" selection-start="495" selection-end="495" vertical-scroll-proportion="0.22260274">
@@ -958,13 +962,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="247" column="21" selection-start="3996" selection-end="3996" vertical-scroll-proportion="-26.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/institutions/_category.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="87" selection-start="92" selection-end="92" vertical-scroll-proportion="-0.625">
@@ -979,9 +976,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="85" column="0" selection-start="1416" selection-end="1416" vertical-scroll-proportion="-18.6">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_errors.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="91" selection-end="91" vertical-scroll-proportion="-3.125">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="70" column="63" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.71188474">
+        <state line="14" column="0" selection-start="353" selection-end="353" vertical-scroll-proportion="-6.5833335">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/shared/_user.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="70" selection-start="117" selection-end="117" vertical-scroll-proportion="0.036014404">
           <folding />
         </state>
       </provider>

@@ -468,3 +468,9 @@ a.Button:hover {
     margin: 10px 0;
     overflow: hidden;
 }
+
+.logout {
+    position: absolute;
+    top: 10px;
+    right: 0;
+}
