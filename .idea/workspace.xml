@@ -60,10 +60,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="details.html.erb" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="details.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="6" selection-start="113" selection-end="113" vertical-scroll-proportion="0.05487805">
+            <state line="40" column="22" selection-start="1288" selection-end="1288" vertical-scroll-proportion="-25.0">
               <folding />
             </state>
           </provider>
@@ -87,10 +87,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="application.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="42" column="35" selection-start="1387" selection-end="1387" vertical-scroll-proportion="-8.265306">
+            <state line="70" column="63" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.71188474">
               <folding />
             </state>
           </provider>
@@ -134,10 +134,10 @@
         <option value="$PROJECT_DIR$/app/views/shared/_user.html.erb" />
         <option value="$PROJECT_DIR$/app/views/institutions/_institution.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/institutions_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/institutions/details.html.erb" />
         <option value="$PROJECT_DIR$/public/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/institutions/_category.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/institutions/details.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       </list>
     </option>
   </component>
@@ -958,13 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="42" column="35" selection-start="1387" selection-end="1387" vertical-scroll-proportion="-8.265306">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="247" column="21" selection-start="3996" selection-end="3996" vertical-scroll-proportion="-26.68">
@@ -981,7 +974,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="6" selection-start="113" selection-end="113" vertical-scroll-proportion="0.05487805">
+        <state line="40" column="22" selection-start="1288" selection-end="1288" vertical-scroll-proportion="-25.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="70" column="63" selection-start="2172" selection-end="2172" vertical-scroll-proportion="0.71188474">
           <folding />
         </state>
       </provider>
