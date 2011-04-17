@@ -63,7 +63,25 @@
       <file leaf-file-name="details.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="37" selection-start="471" selection-end="471" vertical-scroll-proportion="0.21454112">
+            <state line="3" column="6" selection-start="113" selection-end="113" vertical-scroll-proportion="0.05487805">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_category.html.erb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/institutions/_category.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="87" selection-start="92" selection-end="92" vertical-scroll-proportion="-0.625">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.css" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="247" column="21" selection-start="3996" selection-end="3996" vertical-scroll-proportion="-26.68">
               <folding />
             </state>
           </provider>
@@ -104,7 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/db/migrate/20110416181737_newusers.rb" />
         <option value="$PROJECT_DIR$/Gemfile" />
         <option value="$PROJECT_DIR$/app/views/user_sessions/new.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/user_sessions_controller.rb" />
@@ -115,11 +132,12 @@
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/shared/_errors.html.erb" />
         <option value="$PROJECT_DIR$/app/views/shared/_user.html.erb" />
-        <option value="$PROJECT_DIR$/public/stylesheets/application.css" />
         <option value="$PROJECT_DIR$/app/views/institutions/_institution.html.erb" />
         <option value="$PROJECT_DIR$/app/controllers/institutions_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
         <option value="$PROJECT_DIR$/app/views/institutions/details.html.erb" />
+        <option value="$PROJECT_DIR$/public/stylesheets/application.css" />
+        <option value="$PROJECT_DIR$/app/views/institutions/_category.html.erb" />
       </list>
     </option>
   </component>
@@ -856,13 +874,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20110416181737_newusers.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="77" selection-end="77" vertical-scroll-proportion="0.052508753">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="12" selection-start="167" selection-end="167" vertical-scroll-proportion="0.12252042">
@@ -933,13 +944,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="439" column="4" selection-start="7140" selection-end="7140" vertical-scroll-proportion="0.90716803">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/institutions_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="34" column="4" selection-start="989" selection-end="989" vertical-scroll-proportion="0.0">
@@ -961,9 +965,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/stylesheets/application.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="247" column="21" selection-start="3996" selection-end="3996" vertical-scroll-proportion="-26.68">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/institutions/_category.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="87" selection-start="92" selection-end="92" vertical-scroll-proportion="-0.625">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/institutions/details.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="37" selection-start="471" selection-end="471" vertical-scroll-proportion="0.21454112">
+        <state line="3" column="6" selection-start="113" selection-end="113" vertical-scroll-proportion="0.05487805">
           <folding />
         </state>
       </provider>

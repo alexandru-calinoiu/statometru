@@ -174,7 +174,7 @@ a:hover {
 #metrics li {
     list-style-type: none;
     list-style-position: inside;
-    width: 200px;
+    width: 190px;
     margin: 5px 15px;
     display: inline-block;
     font-size: 16px;
@@ -205,7 +205,9 @@ a:hover {
     color: #000000;
     line-height: 24px;
     float: left;
-    margin: 0 10px 0 0;
+    margin: 0 0 0 10px;
+    font-size: 12px;
+    font-weight: bold;
 }
 
 #metrics .up,
@@ -232,17 +234,18 @@ a:hover {
     font-size: 14px;
     margin: 0 0 8px 0;
     text-align: center;
+    height: 50px;
 }
 
 #steps li {
     display: inline-block;
     list-style-type: none;
-    float: left;
     line-height: 26px;
     font-size: 16px;
     padding: 10px;
     color: #A8B2BC;
-    width: 200px ş
+    width: 140px;
+    text-align: left;
 }
 
 #steps span {
