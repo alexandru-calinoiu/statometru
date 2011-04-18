@@ -11,83 +11,86 @@
 
 </head>
 <body>
-  <div id="wrapper">
-    <%= render :partial => "shared/user" %>
-    <a id="logo" href="/">
-      statometru.ro
-    </a>
+<div id="wrapper">
+  <%= render :partial => "shared/user" %>
+  <a id="logo" href="/">
+    statometru.ro
+  </a>
 
-    <% step1, step2, step3 = "", "", "" %>
-    <% step1 = "current" unless (action_name == "details" or action_name == "rate") %>
-    <% step2 = "current" if step1.blank? %>
-    <% step3 = "current" unless step3.blank? %>
+  <% step1, step2, step3 = "", "", "" %>
+  <% step1 = "current" unless (action_name == "details" or action_name == "rate") %>
+  <% step2 = "current" if step1.blank? %>
+  <% step3 = "current" unless step3.blank? %>
 
-    <div id="main">
+  <div id="main">
 
-      <div id="action">
-        <ul id="steps">
-          <li id="step1" class="<%= step1 %>"><span>1</span>Alege instituţia</li>
-          <li id="step2" class="<%= step2 %>"><span>2</span>Dă-i o notă</li>
-          <li id="step3" class="<%= step3 %>"><span>3</span>Ia atitudine!</li>
-        </ul>
+    <div id="action">
+      <ul id="steps">
+        <li id="step1" class="<%= step1 %>"><span>1</span>Alege instituţia</li>
+        <li id="step2" class="<%= step2 %>"><span>2</span>Dă-i o notă</li>
+        <li id="step3" class="<%= step3 %>"><span>3</span>Ia atitudine!</li>
+      </ul>
 
-        <% if step1%>
+      <% if step1 %>
           <%= form_tag('/find', :method => "get") do %>
-            <fieldset>
-              <div id="fields">
-                <%= text_field_tag :institution, "Institutia (ex. Spitalul Municipal)" %>
-                <%= text_field_tag :location, "Locatie (ex. Sibiu)" %>
-              </div>
-              <%= submit_tag 'Caută', :class => "Button" %>
-            </fieldset>
+              <fieldset>
+                <div id="fields">
+                  <%= text_field_tag :institution, "Institutia (ex. Spitalul Municipal)" %>
+                  <%= text_field_tag :location, "Locatie (ex. Sibiu)" %>
+                </div>
+                <%= submit_tag 'Caută', :class => "Button" %>
+              </fieldset>
           <% end %>
-        <% end %>
+      <% end %>
 
-        <% unless step1.blank? %>
+      <% unless step1.blank? %>
           <div id="content">
             <%= render :partial => "shared/errors" %>
             <%= yield %>
           </div>
-        <% end %>
+      <% end %>
 
-        <% unless step2.blank? %>
-          <div id="title"><%= @institution.name %></div>
+      <% unless step2.blank? %>
+          <div id="content">
+            <div id="title"><%= @institution.name %></div>
+            <%= render :partial => "shared/errors" %>
+            <%= yield %>
+          </div>
+      <% end %>
 
-          <%= render :partial => "shared/errors" %>
-          <%= yield %>
-
-        <% end %>
-
-      </div>
-    </div>
-
-    <div id="footer">
-      <p>
-        <a href="http://blog.statometru.ro">Blog</a> |
-        <a href="http://blog.statometru.ro/despre-proiect">Despre StatoMetru</a> |
-        <a href="http://blog.statometru.ro/echipa-statometru">Echipa</a> |
-        <a href="http://blog.statometru.ro/contact">Contact</a>
-      </p>
-
-      <p>
-        &copy; 2011 statometru.ro
-      </p>
     </div>
   </div>
-  
-  <% if Rails.env.production %>
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-22779230-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
-  <% end %>
-  
+  <div id="footer">
+    <p>
+      <a href="http://blog.statometru.ro">Blog</a> |
+      <a href="http://blog.statometru.ro/despre-proiect">Despre StatoMetru</a> |
+      <a href="http://blog.statometru.ro/echipa-statometru">Echipa</a> |
+      <a href="http://blog.statometru.ro/contact">Contact</a>
+    </p>
+
+    <p>
+      &copy; 2011 statometru.ro
+    </p>
+  </div>
+</div>
+
+<% if Rails.env.production %>
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-22779230-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+<% end %>
+
 </body>
 </html>
