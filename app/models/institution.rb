@@ -1,17 +1,18 @@
 # == Schema Information
-# Schema version: 20110416100729
+# Schema version: 20110623162534
 #
 # Table name: institutions
 #
-#  id          :integer(4)      not null, primary key
-#  name        :string(255)
-#  address     :text
-#  rating      :float           default(0.0)
-#  rate_count  :integer(4)      default(0)
-#  created_at  :datetime
-#  updated_at  :datetime
-#  category_id :integer(4)
-#  location_id :integer(4)
+#  id             :integer(4)      not null, primary key
+#  name           :string(255)
+#  address        :text
+#  rating         :float           default(0.0)
+#  rate_count     :integer(4)      default(0)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  category_id    :integer(4)
+#  location_id    :integer(4)
+#  institution_id :integer(4)
 #
 
 class Institution < ActiveRecord::Base
