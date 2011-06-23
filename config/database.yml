@@ -10,3 +10,10 @@
     database: db/test.sqlite3
     pool: 5
     timeout: 5000
+
+  production:
+    adapter: mysql
+    database: stage.statometru
+    username: statometru
+    password: statometru
+    host: 192.168.1.111

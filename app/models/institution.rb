@@ -28,4 +28,14 @@ class Institution < ActiveRecord::Base
   define_index do
     indexes name, :sortable => true
   end
+
+  def rate
+    if (rate_count.nil? || rate_count == 0)
+      result = 0
+    else
+      result = (rating / rate_count).round
+    end
+
+    result
+  end
 end

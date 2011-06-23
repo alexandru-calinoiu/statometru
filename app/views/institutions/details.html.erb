@@ -41,13 +41,6 @@
     text[9] = 'Nota 10';
 
     function rate(index, first) {
-
-//	var api = $('#rating').data('range');
-
-//	if(first) {
-//		api.setValue(index);
-//	}
-
         $('#avatar').find('img').attr('src', '/images/ratings/rating' + index + '.png');
         $('#message').text(text[index - 1]);
     }

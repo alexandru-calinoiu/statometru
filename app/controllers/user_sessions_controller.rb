@@ -28,7 +28,7 @@ class UserSessionsController < ApplicationController
       end
     else
       # login failed or canceled
-      redirect_to root_path, :alert => 'Login failed! Please try again.'
+      redirect_back_or_default root_path, :alert => 'Login failed! Please try again.'
     end
   end
   
